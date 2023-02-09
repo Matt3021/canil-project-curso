@@ -1,9 +1,10 @@
 {{>partials/header}}
-
+{{#banner}}
 <section class="banner" style="background-image: url('images/{{ banner.background }}')">
-  {{ banner.title }}
+  {{ banner.title }} 
 </section>
-<h2>Todos os animais disponíveis para adoção</h2>
+<h2>{{ banner.title }} disponíveis para adoção</h2>
+{{/banner}}
 
 <div class="container list">
   {{#list}}
@@ -13,4 +14,10 @@
       <div class="item--color">Cor: {{ color }}</div>    </div>
   {{/list}}
 </div>
+
+{{^list}}
+<div class="container no-list">
+    <h2>Não há animais disponíveis nestas condições.</h2>
+</div>
+{{/list}}
 {{>partials/footer}}
